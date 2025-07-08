@@ -2,28 +2,83 @@ import { Link } from 'react-router-dom';
 
 function Header() {
     return (
-        <header>
-            <div className="flex w-full h-[120px] items-center mx-6">
+        <header >
+            <div className="flex items-center justify-between px-6 py-4 ">
+                {/* Logo */}
                 <div>
                     <img
                         src="https://quiz.com/images/logo/quiz-multicolor.svg"
-                        className="w-[320px]"
                         alt="Logo"
+                        className="w-[280px]"
                     />
                 </div>
-                <div className="flex flex-row w-full justify-between">
-                    <div className="flex flex-row w-full justify-between items-center">
-                        <h2 className="w-full">Join Game? Enter Pin</h2>
-                        <i className="fa-solid fa-magnifying-glass text-xl ml-4"></i>
+
+                {/* Join PIN box */}
+                <div className="bg-red-300 rounded-xl px-60 py-5 flex items-center space-x-4 min-w-[500px] justify-center">
+                    <label className="font-bold text-xl">Join Game? Enter PIN:</label>
+                    <input
+                        type="text"
+                        placeholder="123 456"
+                        className=" w-[230px] font-bold text-xl text-center text-gray-500 placeholder-gray-400  border-[4px] border-black rounded-full py-2 focus:outline-none focus:ring-2 focus:ring-black"
+                    />
+                </div>
+
+                {/* Search icon + Sign in */}
+                <div className="flex items-center space-x-4">
+                    <div className="w-10 h-10 flex justify-center bg-[#eee] p-2 rounded-full">
+                        <i className="fa-solid fa-magnifying-glass text-lg text-black"></i>
                     </div>
+                    <button className="bg-lime-300 border-2 border-black text-black font-semibold px-6 py-2 rounded-full hover:bg-lime-400 transition-all">
+                        Sign in
+                    </button>
                 </div>
             </div>
-            <nav>
-                <Link to="/">Trang Chủ</Link>
-                <Link to="/register">Đăng Ký</Link>
-                <Link to="/login">Đăng Nhập</Link>
-            </nav>
+            {/* Divider line */}
+             <div className="w-full border-t border-gray-300 mb-4"></div>
+            {/* Navigation links */}
+            <div className=" py-2">
+                <nav className="flex justify-center space-x-32">
+                    <Link to="/" className="text-gray-600 hover:text-black flex flex-col items-center">
+                        <i className="fa-solid fa-house"></i>
+                        <label>Home</label>
+
+                    </Link>
+                    <Link to="/about" className="text-gray-600 hover:text-black flex flex-col items-center">
+                        <i className="fa-solid fa-info-circle"></i>
+                        <label>About</label>
+                        
+                    </Link>
+                    <Link to="/contact" className="text-gray-600 hover:text-black flex flex-col items-center">
+                        <i className="fa-solid fa-envelope"></i>
+                        <label>Contact</label>
+                        
+                    </Link>
+                    <Link to="/" className="text-gray-600 hover:text-black flex flex-col items-center">
+                        <i className="fa-solid fa-house"></i>
+                        <label>Home</label>
+
+                    </Link>
+                    <Link to="/about" className="text-gray-600 hover:text-black flex flex-col items-center">
+                        <i className="fa-solid fa-info-circle"></i>
+                        <label>About</label>
+                        
+                    </Link>
+                    <Link to="/contact" className="text-gray-600 hover:text-black flex flex-col items-center">
+                        <i className="fa-solid fa-envelope"></i>
+                        <label>Contact</label>
+                        
+                    </Link>
+                    <Link to="/" className="text-gray-600 hover:text-black flex flex-col items-center">
+                        <i className="fa-solid fa-house"></i>
+                        <label>Home</label>
+
+                    </Link>
+                   
+                </nav>
+            </div>
+         
         </header>
+
     );
 }
 
